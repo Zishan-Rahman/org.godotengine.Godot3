@@ -17,7 +17,9 @@ build-options:
       env:
         # Solves build problems with Embree being (as of now) seemingly broken on ARM64
         # Disables CPU lightmapper support, which shouldn't be too big an issue for now as CPUs in ARM64 machines are often quite slow 
-        SCONS_FLAGS_EXTRA: module_embree_enabled=no
+        SCONS_FLAGS_EXTRA: >
+          module_embree_enabled=no
+          module_lightmapper_cpu_enabled=no
 
   env:
     # Will be appended to the version string displayed in the editor and command-line help
