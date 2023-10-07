@@ -20,6 +20,7 @@ build-options:
         # Also must disable the raycast module as the source for that module relies on Embree
         SCONS_FLAGS_EXTRA: >
           builtin_embree=no
+          module_lightmapper_cpu_enabled=no
           module_raycast_enabled=no
 
   env:
