@@ -35,6 +35,7 @@ build-options:
       builtin_openssl=no
       builtin_libvpx=no
       builtin_zlib=no
+      module_embree_enabled=no
       udev=no
 finish-args:
   - --share=ipc
