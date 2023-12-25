@@ -49,6 +49,8 @@ finish-args:
 modules:
   - shared-modules/glu/glu-9.json
 
+  - embree3/embree-module.yaml
+
   - name: openjdk
     buildsystem: simple
     build-commands:
