@@ -1,8 +1,24 @@
-name: embree3
-buildsystem: cmake
-sources:
-  - type: git
-    url: https://github.com/embree/embree.git
-    commit: 698442324ccddd11725fb8875275dc1384f7fb40
-    tag: v3.13.5
+name: embree
+modules:
+  - name: libglfw3
+    buildsystem: cmake
+    sources:
+      - type: git
+        url: https://github.com/glfw/glfw.git
+        commit: e2c92645460f680fd272fd2eed591efb2be7dc31
+        tag: 3.3.9
+  - name: libtbb
+    buildsystem: cmake
+    sources:
+      - type: git
+        url: https://github.com/oneapi-src/oneTBB.git
+        commit: 8b829acc65569019edb896c5150d427f288e8aba
+        tag: v2021.11.0
+  - name: embree3
+    buildsystem: cmake
+    sources:
+      - type: git
+        url: https://github.com/embree/embree.git
+        commit: 698442324ccddd11725fb8875275dc1384f7fb40
+        tag: v3.13.5
 
