@@ -9,6 +9,8 @@ modules:
         tag: 3.3.9
   - name: libtbb
     buildsystem: cmake
+    config-opts:
+      - -DTBB_TEST=OFF
     sources:
       - type: git
         url: https://github.com/oneapi-src/oneTBB.git
