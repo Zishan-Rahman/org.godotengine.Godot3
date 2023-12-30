@@ -16,6 +16,24 @@ modules:
         url: https://github.com/oneapi-src/oneTBB.git
         commit: 8b829acc65569019edb896c5150d427f288e8aba
         tag: v2021.11.0
+  - name: ispc
+    buildsystem: simple
+    sources:
+      - type: archive
+        only-arches: [x86_64]
+        url: https://github.com/ispc/ispc/releases/download/v1.22.0/ispc-v1.22.0-linux.tar.gz
+        sha256: 8c935ef7537c241a519f2632e6ffeae0988a64f21db78d403ceaa4c52517b416
+      - type: archive
+        only-arches: [aarch64]
+        url: https://github.com/ispc/ispc/releases/download/v1.22.0/ispc-v1.22.0-linux.aarch64.tar.gz
+        sha256: 3c66a8b746f93acc4a133519cd7e586a8c6cc9331bc4f7ea2050913c63516cb6
+    build-commands:
+      - install -d /app/share/ispc /app/share/lib/ispc /app/share/include/ispc
+      - cp -r * /app/share/ispc
+      - ls /app/share/ispc
+      - install -D /app/share/ispc/bin/ispc /app/bin/ispc
+      - cp -r /app/share/ispc/lib* /app/lib/ispc
+      - cp -r /app/share/ispc/include /app/include/ispc
   - name: embree3
     buildsystem: cmake
     sources:
